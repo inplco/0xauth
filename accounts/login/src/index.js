@@ -1,6 +1,5 @@
 import { ethers } from 'ethers';
 import { SiweMessage } from 'siwe';
-import axios from 'axios';
 
 const domain = window.location.host;
 const origin = window.location.origin;
@@ -20,9 +19,10 @@ const tablePrefix = `<tr><th>ENS Text Key</th><th>Value</th></tr>`;
 
 let address;
 
-const BACKEND_ADDR = '';
+const BACKEND_ADDR = require('Config').serverUrl;
+
 async function createSiweMessage(address, statement) {
-    const res = await axios.get('/nonce', {
+    const res = await fetch(BACKEND_ADDR + '/nonce', {
         credentials: 'include',
     });
     const message = new SiweMessage({
@@ -96,7 +96,7 @@ async function signInWithEthereum() {
     );
     const signature = await signer.signMessage(message);
 
-    const res = await axios.get(`${BACKEND_ADDR}/verify`, {
+    const res = await fetch(BACKEND_ADDR + '/verify', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ async function signInWithEthereum() {
 }
 
 async function getInformation() {
-    const res = await axios.get('/personal_information', {
+    const res = await fetch(BACKEND_ADDR + '/personal_information', {
         credentials: 'include',
     });
 

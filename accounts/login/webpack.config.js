@@ -16,14 +16,18 @@ module.exports = {
     filename: 'main.js',
     path: path.join(__dirname,'/../../public_html/accounts')
   },
+  externals: {
+    'Config': JSON.stringify(process.env.NODE_ENV === 'production' ? {
+      serverUrl: "https://inpl.one:3001"
+    } : {
+      serverUrl: "http://localhost:3000"
+    })
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
       path: path.join(__dirname,'/../../public_html/accounts')
-    }),
-    new webpack.DefinePlugin({
-      __API__: 'http://interplanetary.company:8080/'
     })
   ]
 };
