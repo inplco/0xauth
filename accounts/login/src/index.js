@@ -105,6 +105,7 @@ async function signInWithEthereum() {
         credentials: 'include'
     });
 
+
     if (!res.ok) {
         console.error(`Failed in getInformation: ${res.statusText}`);
         return

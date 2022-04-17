@@ -112,38 +112,40 @@
 	display: inline-block;
 	vertical-align: middle;
 	zoom: 1;
-	color: #ffffff;
-	padding: 15px 15px;
-	border: 0px solid #ffffff;
+	color: #000000;
+	padding: 10px 10px;
+	border: 2px solid #000000;
 	border-radius: 10px;
-	font-size: 22px;
-  font-weight: 200;
+	font-size: 18px;
+  font-weight: 400;
   margin: 0px 5px 0px 5px;
-  width: 280px;
+  width: 180px;
 }
 .button-outline-menu:hover {
-  background: rgba(255,255,255,0.5);
-  color: #ffffff;
-  border: 0px solid #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
 }
 
 .connect {
-  background: rgba(3, 186, 252,0.7);
+  background: rgba(191, 191, 191, 1.0);
 }
 .connect:hover {
-  background: rgba(108, 245, 66,0.7);
+  background: rgba(255, 255, 255, 1.0);
 }
 
 .siwe {
-  background: rgba(255,255,255,0.6);
+  background: rgba(191, 191, 191, 1.0);
+}
+.siwe:hover {
+  background: rgba(255, 255, 255, 1.0);
 }
 
 .info {
-  background: rgba(255,255,255,0.6);
+  background: rgba(108, 245, 66,1);
 }
 
 .login {
-  background: rgba(106,196,57,0.65);
+  background: rgba(108, 245, 66,1);
 }
 
 a {
@@ -295,6 +297,14 @@ h2, .h2 {
   height: 26px;
   display:inline-block;
   margin-right: 3px;
+}
+.thumbnailsiwe {
+  background: transparent;
+  margin-top: 0px;
+  margin-left: 3px;
+  height: 28px;
+  margin-right: 3px;
+  margin-bottom: -10px;
 }
 .thumbnailtez {
   background: transparent;
